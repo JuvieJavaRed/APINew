@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>UploadMemberController</servlet-name>
+        <servlet-class>com.api.controller.UploadMemberController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UploadCeoController</servlet-name>
+        <servlet-class>com.api.controller.UploadCeoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UploadCompanyController</servlet-name>
+        <servlet-class>com.api.controller.UploadCompanyController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UploadContactController</servlet-name>
+        <servlet-class>com.api.controller.UploadContactController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginController</servlet-name>
+        <servlet-class>com.api.controller.LoginController</servlet-class>
+    </servlet>
+     <servlet>
+        <servlet-name>JAVA WS</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        
+        <init-param>
+            <param-name>jersey.config.server.provider.packages</param-name>
+            <param-value>com.api.model</param-value>
+        </init-param>
+        
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+     <servlet-mapping>
+        <servlet-name>JAVA WS</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadMemberController</servlet-name>
+        <url-pattern>/UploadMemberController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadCeoController</servlet-name>
+        <url-pattern>/UploadCeoController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadCompanyController</servlet-name>
+        <url-pattern>/UploadCompanyController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadContactController</servlet-name>
+        <url-pattern>/UploadContactController</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+    <servlet-mapping>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/LoginController</url-pattern>
+    </servlet-mapping>
+   
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
